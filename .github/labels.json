@@ -1,0 +1,30 @@
+[
+  {
+    "name": "bug",
+    "color": "FC2C2B",
+    "aliases": [],
+    "description": "不具合の修正",
+    "delete": false
+  },
+  {
+    "name": "feature",
+    "color": "0E4BDB",
+    "aliases": [],
+    "description": "新機能",
+    "delete": false
+  },
+  {
+    "name": "document",
+    "color": "F4BFD0",
+    "aliases": [],
+    "description": "ドキュメントの追加および修正",
+    "delete": false
+  },
+  {
+    "name": "refactor",
+    "color": "AFD38D",
+    "aliases": [],
+    "description": "リファクタリング",
+    "delete": false
+  }
+]
