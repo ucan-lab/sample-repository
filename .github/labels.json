@@ -17,7 +17,14 @@
     "name": "document",
     "color": "FFFFFF",
     "aliases": [],
-    "description": "種別: ドキュメントの追加および修正",
+    "description": "種別: ドキュメントの変更",
+    "delete": false
+  },
+  {
+    "name": "chore",
+    "color": "E2601E",
+    "aliases": [],
+    "description": "種別: ツールやライブラリの変更",
     "delete": false
   },
   {
@@ -38,14 +45,14 @@
     "name": "major",
     "color": "07575B",
     "aliases": [],
-    "description": "種別: リリース。メジャーアップデート",
+    "description": "種別: メジャーアップデート",
     "delete": false
   },
   {
     "name": "minor",
     "color": "C4DFE6",
     "aliases": [],
-    "description": "種別: リリース。メジャーアップデート",
+    "description": "種別: マイナーアップデート",
     "delete": false
   },
   {
