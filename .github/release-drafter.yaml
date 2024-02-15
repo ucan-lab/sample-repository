@@ -15,7 +15,6 @@ categories:
       - 'refactor'
       - 'chore'
       - 'dependencies'
-      - 'renovate'
       - 'document'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
