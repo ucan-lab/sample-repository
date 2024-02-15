@@ -5,6 +5,8 @@ on:
       - develop
 jobs:
   git-pr-release:
+    permissions:
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
