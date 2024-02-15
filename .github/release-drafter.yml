@@ -4,8 +4,6 @@ categories:
   - title: '🎉 Release'
     labels:
       - 'release'
-      - 'major'
-      - 'minor'
   - title: '🚀 Features'
     labels:
       - 'feature'
@@ -30,9 +28,6 @@ version-resolver:
       - 'minor'
   default: patch
 autolabeler:
-  - label: release
-    branch:
-      - '/^release[/-].+/'
   - label: feature
     branch:
       - '/^feat(ure)?[/-].+/'
