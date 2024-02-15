@@ -1,11 +1,16 @@
 name: Update Labels
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
 
 jobs:
   label:
+    permissions:
+      issues: write
+      pull-requests: write
+
     runs-on: ubuntu-latest
 
     steps:
