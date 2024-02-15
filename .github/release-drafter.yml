@@ -36,6 +36,7 @@ autolabeler:
   - label: feature
     branch:
       - '/^feat(ure)?[/-].+/'
+      - '/^topic[/-].+/'
   - label: bug
     branch:
       - '/^fix[/-].+/'
