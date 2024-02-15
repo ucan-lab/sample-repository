@@ -47,6 +47,6 @@ autolabeler:
     files:
       - '*.md'
 template: |
-  ## Changes
+  # Changes
 
   $CHANGES
