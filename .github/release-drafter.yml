@@ -50,7 +50,6 @@ autolabeler:
       - '/doc(umentation)[/-].+/'
     files:
       - '*.md'
-header: $HEADER
 template: |
   ## Changes
 
