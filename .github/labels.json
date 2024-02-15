@@ -56,6 +56,13 @@
     "delete": false
   },
   {
+    "name": "dependencies",
+    "color": "5319E7",
+    "aliases": [],
+    "description": "種別: セキュリティアップデート",
+    "delete": false
+  },
+  {
     "name": "infrastructure",
     "color": "E6D72A",
     "aliases": [],
