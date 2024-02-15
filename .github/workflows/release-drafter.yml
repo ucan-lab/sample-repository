@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+    types: [opened, reopened, synchronize]
 
 permissions:
   contents: read
@@ -18,6 +19,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set Variables
+        run: |
+          RELEASE_DATE=$(date '+%Y-%m-%d %H:%M')
+          echo "HEADER=${RELEASE_DATE} RELEASED 🎉" >> $GITHUB_ENV
 
       - uses: release-drafter/release-drafter@v5
         env:
