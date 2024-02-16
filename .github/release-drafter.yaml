@@ -50,12 +50,12 @@ autolabeler:
       - 'infra/docker/*'
   - label: npm:install
     files:
-      - 'package.json'
-      - 'package-lock.json'
+      - 'src/package.json'
+      - 'src/package-lock.json'
   - label: composer:install
     files:
-      - 'composer.json'
-      - 'composer.lock'
+      - 'src/composer.json'
+      - 'src/composer.lock'
   - label: artisan:migrate
     files:
       - 'src/database/migrations/*'
