@@ -47,18 +47,18 @@ autolabeler:
       - '*.md'
   - label: docker:build
     files:
-      - 'infra/docker/*'
+      - 'infra/docker'
   - label: npm:install
     files:
-      - 'src/package.json'
-      - 'src/package-lock.json'
+      - 'package.json'
+      - 'package-lock.json'
   - label: composer:install
     files:
-      - 'src/composer.json'
-      - 'src/composer.lock'
+      - 'composer.json'
+      - 'composer.lock'
   - label: artisan:migrate
     files:
-      - 'src/database/migrations/*'
+      - 'database/migrations'
 template: |
   # Changes
 
