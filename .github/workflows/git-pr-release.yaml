@@ -1,8 +1,7 @@
 name: git-pr-release
 on:
   push:
-    branches:
-      - develop
+    branches: [develop]
 jobs:
   git-pr-release:
     permissions:
