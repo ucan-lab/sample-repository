@@ -1,0 +1,11 @@
+name: Deploy Production
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo '本番デプロイを実行しました。'

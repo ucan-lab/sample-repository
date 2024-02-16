@@ -1,0 +1,11 @@
+name: Deploy Staging
+on:
+  workflow_dispatch:
+  push:
+    branches: [develop]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo 'ステージングデプロイを実行しました。'
