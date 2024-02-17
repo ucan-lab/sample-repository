@@ -26,39 +26,6 @@ version-resolver:
     labels:
       - 'minor'
   default: patch
-autolabeler:
-  - label: feature
-    branch:
-      - '/^feat(ure)?[/-].+/'
-      - '/^topic[/-].+/'
-  - label: bug
-    branch:
-      - '/^fix[/-].+/'
-  - label: chore
-    branch:
-      - '/^chore[/-].+/'
-  - label: refactor
-    branch:
-      - '/(refactor|refactoring)[/-].+/'
-  - label: documentation
-    branch:
-      - '/doc(umentation)[/-].+/'
-    files:
-      - '*.md'
-  - label: docker:build
-    files:
-      - 'infra/docker'
-  - label: npm:install
-    files:
-      - 'package.json'
-      - 'package-lock.json'
-  - label: composer:install
-    files:
-      - 'composer.json'
-      - 'composer.lock'
-  - label: artisan:migrate
-    files:
-      - 'database/migrations'
 template: |
   # Changes
 
