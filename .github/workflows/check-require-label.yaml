@@ -8,6 +8,8 @@ jobs:
   check-require-label:
     runs-on: ubuntu-latest
     steps:
+      - name: Echo Label
+        run: echo "${{toJson(github.event.pull_request.labels.*.name)}}"
       - name: bug, feature, document, chore, refactor, dependencies, release の中からいずれかのラベルを指定してください。
         if: >-
           ! contains(github.event.pull_request.labels.*.name, 'bug') &&
