@@ -35,6 +35,20 @@
     "delete": false
   },
   {
+    "name": "duplicate",
+    "color": "CCCCCC",
+    "aliases": [],
+    "description": "種別: 重複",
+    "delete": false
+  },
+  {
+    "name": "wontfix",
+    "color": "CCCCCC",
+    "aliases": [],
+    "description": "種別: 対応しない",
+    "delete": false
+  },
+  {
     "name": "release",
     "color": "003B46",
     "aliases": [],
