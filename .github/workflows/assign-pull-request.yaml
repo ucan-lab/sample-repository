@@ -3,12 +3,6 @@ on:
   pull_request:
     types: [synchronize, labeled, unlabeled, opened, reopened]
 jobs:
-  assign-author:
-    permissions:
-      pull-requests: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: technote-space/assign-author@v1
   assign-label:
     permissions:
       contents: read
@@ -19,8 +13,16 @@ jobs:
       - uses: actions/labeler@v5
         with:
           configuration-path: .github/labeler.yaml
+  assign-author:
+    permissions:
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: technote-space/assign-author@v1
   check-require-label:
     needs: assign-label
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Echo Label
