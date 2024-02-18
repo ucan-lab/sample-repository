@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/labeler@v5
+        with:
+          configuration-path: .github/labeler.yaml
   check-require-label:
     needs: labeler
     runs-on: ubuntu-latest
