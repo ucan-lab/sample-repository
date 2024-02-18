@@ -1,13 +1,11 @@
-name: Assign author to Pull Request
+name: Assign author to Issue
 on:
-  pull_request:
+  issues:
     types: [opened]
 jobs:
   assign-author:
     permissions:
-      pull-requests: write
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - uses: technote-space/assign-author@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
