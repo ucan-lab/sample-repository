@@ -5,7 +5,7 @@ on:
 jobs:
   assign-author:
     permissions:
-      pull-requests: write
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - uses: technote-space/assign-author@v1
