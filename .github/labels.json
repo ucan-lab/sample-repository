@@ -63,28 +63,28 @@
     "delete": false
   },
   {
-    "name": "docker:build",
+    "name": "docker",
     "color": "E6D72A",
     "aliases": [],
     "description": "依存関係: docker compose build が必要な変更",
     "delete": false
   },
   {
-    "name": "npm:install",
+    "name": "npm",
     "color": "E6D72A",
     "aliases": [],
     "description": "依存関係: npm install が必要な変更",
     "delete": false
   },
   {
-    "name": "composer:install",
+    "name": "composer",
     "color": "E6D72A",
     "aliases": [],
     "description": "依存関係: composer install が必要な変更",
     "delete": false
   },
   {
-    "name": "artisan:migrate",
+    "name": "migrate",
     "color": "E6D72A",
     "aliases": [],
     "description": "依存関係: php artisan migrate が必要な変更",
