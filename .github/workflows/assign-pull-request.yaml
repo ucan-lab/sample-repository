@@ -1,0 +1,39 @@
+name: Label Pull Request
+on:
+  pull_request:
+    types: [synchronize, labeled, unlabeled, opened, reopened]
+jobs:
+  assign-author:
+    permissions:
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: technote-space/assign-author@v1
+  assign-label:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/labeler@v5
+        with:
+          configuration-path: .github/labeler.yaml
+  check-require-label:
+    needs: assign-label
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Label
+        run: echo "${{toJson(github.event.pull_request.labels.*.name)}}"
+      - name: bug, feature, document, chore, refactor, dependencies, release の中からいずれかのラベルを指定してください。
+        if: >-
+          ! contains(github.event.pull_request.labels.*.name, 'bug') &&
+          ! contains(github.event.pull_request.labels.*.name, 'feature') &&
+          ! contains(github.event.pull_request.labels.*.name, 'document') &&
+          ! contains(github.event.pull_request.labels.*.name, 'chore') &&
+          ! contains(github.event.pull_request.labels.*.name, 'refactor') &&
+          ! contains(github.event.pull_request.labels.*.name, 'dependencies') &&
+          ! contains(github.event.pull_request.labels.*.name, 'release')
+        run: exit 1
+      - name: Successfully
+        run: exit 0

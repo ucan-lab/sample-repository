@@ -35,6 +35,20 @@
     "delete": false
   },
   {
+    "name": "duplicate",
+    "color": "CCCCCC",
+    "aliases": [],
+    "description": "種別: 重複",
+    "delete": false
+  },
+  {
+    "name": "wontfix",
+    "color": "CCCCCC",
+    "aliases": [],
+    "description": "種別: 対応しない",
+    "delete": false
+  },
+  {
     "name": "release",
     "color": "003B46",
     "aliases": [],
@@ -45,14 +59,14 @@
     "name": "major",
     "color": "07575B",
     "aliases": [],
-    "description": "種別: メジャーアップデート",
+    "description": "リリースバージョニング: メジャーアップデート",
     "delete": false
   },
   {
     "name": "minor",
     "color": "C4DFE6",
     "aliases": [],
-    "description": "種別: マイナーアップデート",
+    "description": "リリースバージョニング: マイナーアップデート",
     "delete": false
   },
   {
@@ -63,10 +77,31 @@
     "delete": false
   },
   {
-    "name": "infrastructure",
+    "name": "docker",
     "color": "E6D72A",
     "aliases": [],
-    "description": "インフラに関連する変更",
+    "description": "依存関係: docker compose build が必要な変更",
+    "delete": false
+  },
+  {
+    "name": "npm",
+    "color": "E6D72A",
+    "aliases": [],
+    "description": "依存関係: npm install が必要な変更",
+    "delete": false
+  },
+  {
+    "name": "composer",
+    "color": "E6D72A",
+    "aliases": [],
+    "description": "依存関係: composer install が必要な変更",
+    "delete": false
+  },
+  {
+    "name": "migrate",
+    "color": "E6D72A",
+    "aliases": [],
+    "description": "依存関係: php artisan migrate が必要な変更",
     "delete": false
   },
   {

@@ -1,0 +1,22 @@
+feature:
+  - head-branch: ['^feat(ure)?', '^topic']
+bug:
+  - head-branch: ['^bug', '^fix']
+chore:
+  - head-branch: ['^chore']
+refactor:
+  - head-branch: ['^refactor']
+document:
+  - head-branch: ['^doc(ument)']
+docker:
+  - changed-files:
+    - any-glob-to-any-file: ['infra/docker/*']
+npm:
+  - changed-files:
+    - any-glob-to-any-file: ['package.json', 'package-lock.json']
+composer:
+  - changed-files:
+    - any-glob-to-any-file: ['composer.json', 'composer.lock']
+migrate:
+  - changed-files:
+    - any-glob-to-any-file: ['database/migrations/*']

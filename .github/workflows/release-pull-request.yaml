@@ -1,9 +1,9 @@
-name: git-pr-release
+name: Release Pull Request
 on:
   push:
     branches: [develop]
 jobs:
-  git-pr-release:
+  release-pull-request:
     permissions:
       pull-requests: write
     runs-on: ubuntu-latest
