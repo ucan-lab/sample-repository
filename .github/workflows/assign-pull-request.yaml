@@ -22,7 +22,11 @@ jobs:
       - uses: actions/labeler@v5
         if: ${{ github.event.action == 'opened' }}
         with:
-          configuration-path: .github/labeler.yaml
+          configuration-path: .github/labeler-branch.yaml
+      - uses: actions/labeler@v5
+        if: ${{ contains(fromJson('["opened", "synchronize"]'), github.event.action) }}
+        with:
+          configuration-path: .github/labeler-files.yaml
   check-require-label:
     needs: assign-label
     permissions:
