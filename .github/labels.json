@@ -59,14 +59,14 @@
     "name": "major",
     "color": "07575B",
     "aliases": [],
-    "description": "リリースバージョニング: メジャーアップデート",
+    "description": "バージョニング: メジャーアップデート",
     "delete": false
   },
   {
     "name": "minor",
     "color": "C4DFE6",
     "aliases": [],
-    "description": "リリースバージョニング: マイナーアップデート",
+    "description": "バージョニング: マイナーアップデート",
     "delete": false
   },
   {
