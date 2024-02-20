@@ -1,8 +1,16 @@
-name: Label Pull Request
+name: Assign Pull Request
 on:
   pull_request:
     types: [synchronize, labeled, unlabeled, opened, reopened]
 jobs:
+  assign-author:
+    if: ${{ github.actor != 'renovate[bot]' }}
+    permissions:
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: technote-space/assign-author@v1
+        if: ${{ github.event.action == 'opened' }}
   assign-label:
     permissions:
       contents: read
@@ -10,32 +18,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        if: ${{ github.event.action == 'opened' }}
       - uses: actions/labeler@v5
+        if: ${{ github.event.action == 'opened' }}
         with:
           configuration-path: .github/labeler.yaml
-  assign-author:
-    permissions:
-      pull-requests: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: technote-space/assign-author@v1
   check-require-label:
     needs: assign-label
     permissions:
-      contents: read
+      pull-requests: read
     runs-on: ubuntu-latest
     steps:
+      - id: labels
+        shell: bash
+        env:
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          json=$(gh pr view "$PR_NUMBER" --json labels | jq -c '.labels|map(.name)')
+          echo "json=$json" >> "$GITHUB_OUTPUT"
       - name: Echo Label
-        run: echo "${{toJson(github.event.pull_request.labels.*.name)}}"
+        run: echo "${{steps.labels.outputs.json}}"
       - name: bug, feature, document, chore, refactor, dependencies, release の中からいずれかのラベルを指定してください。
         if: >-
-          ! contains(github.event.pull_request.labels.*.name, 'bug') &&
-          ! contains(github.event.pull_request.labels.*.name, 'feature') &&
-          ! contains(github.event.pull_request.labels.*.name, 'document') &&
-          ! contains(github.event.pull_request.labels.*.name, 'chore') &&
-          ! contains(github.event.pull_request.labels.*.name, 'refactor') &&
-          ! contains(github.event.pull_request.labels.*.name, 'dependencies') &&
-          ! contains(github.event.pull_request.labels.*.name, 'release')
+          ! contains(fromJSON(steps.labels.outputs.json), 'bug') &&
+          ! contains(fromJSON(steps.labels.outputs.json), 'feature') &&
+          ! contains(fromJSON(steps.labels.outputs.json), 'document') &&
+          ! contains(fromJSON(steps.labels.outputs.json), 'chore') &&
+          ! contains(fromJSON(steps.labels.outputs.json), 'refactor') &&
+          ! contains(fromJSON(steps.labels.outputs.json), 'dependencies') &&
+          ! contains(fromJSON(steps.labels.outputs.json), 'release')
         run: exit 1
       - name: Successfully
         run: exit 0
