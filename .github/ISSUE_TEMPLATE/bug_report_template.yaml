@@ -1,0 +1,69 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: description
+    attributes:
+      label: 問題の説明
+      description: どのような問題が発生していますか？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: 問題を再現させる手順を詳細に記述してください。
+      value: |
+        1.
+        2.
+        3.
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待される挙動
+      description: 本来どのような挙動が期待されるのか説明してください。
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の挙動
+      description: 実際に発生した挙動を説明してください。
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: スクリーンショット
+      description: 問題を示すスクリーンショットがあれば、ここに追加してください。
+  - type: checkboxes
+    attributes:
+      label: どの環境で発生しましたか？
+      description: 問題が発生した環境を選択してください。
+      options:
+        - label: ローカル環境
+        - label: 検証環境
+        - label: 本番環境
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: どのブラウザで問題が発生しましたか？
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: logs
+    attributes:
+      label: ログ
+      description: エラー発生時のログがあれば記載して下さい。
+      render: shell
+  - type: textarea
+    id: others
+    attributes:
+      label: その他
+      description: その他、問題に関する情報があればここに追加してください。

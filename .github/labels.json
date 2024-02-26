@@ -49,6 +49,13 @@
     "delete": false
   },
   {
+    "name": "icebox",
+    "color": "BDDEEC",
+    "aliases": [],
+    "description": "種別: 優先度低",
+    "delete": false
+  },
+  {
     "name": "release",
     "color": "003B46",
     "aliases": [],
