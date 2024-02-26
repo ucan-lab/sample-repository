@@ -1,0 +1,12 @@
+docker:
+  - changed-files:
+    - any-glob-to-any-file: ['infra/docker/*']
+npm:
+  - changed-files:
+    - any-glob-to-any-file: ['src/package.json', 'src/package-lock.json']
+composer:
+  - changed-files:
+    - any-glob-to-any-file: ['src/composer.json', 'src/composer.lock']
+migrate:
+  - changed-files:
+    - any-glob-to-any-file: ['src/database/migrations/*']

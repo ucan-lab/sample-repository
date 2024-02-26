@@ -1,0 +1,10 @@
+feature:
+  - head-branch: ['^feat(ure)?', '^topic']
+bug:
+  - head-branch: ['^bug', '^fix']
+chore:
+  - head-branch: ['^chore']
+refactor:
+  - head-branch: ['^refactor']
+document:
+  - head-branch: ['^doc(ument)?']

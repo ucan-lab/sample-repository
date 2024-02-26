@@ -1,0 +1,35 @@
+name: Feature Report
+description: Feature
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: description
+    attributes:
+      label: 機能の概要
+      description: どのような機能か説明してください。
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 機能の目的
+      description: この機能がどのような目的で必要なのか説明してください。
+  - type: textarea
+    id: complete-conditions
+    attributes:
+      label: 完了条件
+      description: このイシューが完了となる条件を列挙してください。
+      value: |
+        - [ ]
+        - [ ]
+        - [ ]
+  - type: textarea
+    id: others
+    attributes:
+      label: その他
+      description: その他、この機能要望に関する情報があればここに追加してください。
