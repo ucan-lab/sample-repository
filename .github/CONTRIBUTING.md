@@ -189,3 +189,32 @@ $ git push --force-with-lease
 ## ステップ11: プロダクションデプロイの作成(自動)
 
 - [リリース](https://github.com/ucan-lab/sample-repository/releases) のドラフトが `Publish release` されるとプロダクションデプロイが自動で行われます。
+
+## 補足
+
+### コミットメッセージ規約
+
+[Conventional Commits](https://www.conventionalcommits.org/ja) というコミットメッセージ規約を採用します。
+
+これを守ることで意味のあるコミット粒度＆メッセージになりあとから振り返りやすくなります。
+Change Logsを自動生成できるようになります。
+
+### コミット入力補助ツール
+
+規約に沿ったコミットメッセージを補助する `git-cz` をご利用ください。
+
+```
+$ npm install -g git-cz
+$ git cz
+```
+
+### コミット検証ツール
+
+CIでコミットがフォーマット通りになっているかチェックしています。
+push前にローカルで検証したい場合は下記の手順で導入します。
+
+```
+$ npm install -g @commitlint/cli @commitlint/config-conventional
+$ echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js
+$ npx commitlint --from origin/develop --to HEAD --verbose
+```
