@@ -7,4 +7,4 @@ chore:
 refactor:
   - head-branch: ['^refactor']
 document:
-  - head-branch: ['^doc(ument)']
+  - head-branch: ['^doc(ument)?']
