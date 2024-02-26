@@ -3,14 +3,6 @@ on:
   pull_request:
     types: [synchronize, labeled, unlabeled, opened, reopened]
 jobs:
-  assign-author:
-    if: ${{ github.actor != 'renovate[bot]' }}
-    permissions:
-      pull-requests: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: technote-space/assign-author@v1
-        if: ${{ github.event.action == 'opened' }}
   assign-label:
     permissions:
       contents: read
