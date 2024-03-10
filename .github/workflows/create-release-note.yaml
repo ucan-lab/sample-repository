@@ -1,11 +1,9 @@
-name: Release Drafter
+name: Create Release Note
 on:
   push:
     branches: [main]
   pull_request:
     types: [opened, reopened, synchronize]
-permissions:
-  contents: read
 jobs:
   update-release-draft:
     permissions:

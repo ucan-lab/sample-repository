@@ -1,5 +1,5 @@
 feature:
-  - head-branch: ['^feat(ure)?', '^topic']
+  - head-branch: ['^feat(ure)?']
 bug:
   - head-branch: ['^bug', '^fix']
 chore:

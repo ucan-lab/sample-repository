@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        if: ${{ github.event.action == 'opened' }}
       - uses: actions/labeler@v5
         if: ${{ github.event.action == 'opened' }}
         with:
