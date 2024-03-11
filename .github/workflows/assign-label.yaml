@@ -1,7 +1,7 @@
-name: Assign Pull Request
+name: Assign Label
 on:
   pull_request:
-    types: [synchronize, labeled, unlabeled, opened, reopened]
+    types: [opened, labeled, unlabeled, synchronize, reopened]
 jobs:
   assign-label:
     permissions:
