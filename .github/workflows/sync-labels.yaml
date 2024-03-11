@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, develop]
 jobs:
-  label:
+  sync-labels:
     permissions:
       issues: write
       pull-requests: write

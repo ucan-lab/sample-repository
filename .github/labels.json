@@ -2,120 +2,86 @@
   {
     "name": "bug",
     "color": "FC2C2B",
-    "aliases": [],
-    "description": "種別: 不具合の修正",
-    "delete": false
+    "description": "種別: 不具合の修正"
   },
   {
     "name": "feature",
     "color": "375E97",
-    "aliases": [],
-    "description": "種別: 新機能",
-    "delete": false
+    "description": "種別: 新機能"
   },
   {
     "name": "document",
     "color": "FFFFFF",
-    "aliases": [],
-    "description": "種別: ドキュメントの変更",
-    "delete": false
+    "description": "種別: ドキュメントの変更"
   },
   {
     "name": "chore",
     "color": "E2601E",
-    "aliases": [],
-    "description": "種別: ツールやライブラリの変更",
-    "delete": false
+    "description": "種別: ツールやライブラリの変更"
   },
   {
     "name": "refactor",
     "color": "AFD38D",
-    "aliases": [],
-    "description": "種別: リファクタリング",
-    "delete": false
+    "description": "種別: リファクタリング"
   },
   {
     "name": "duplicate",
     "color": "CCCCCC",
-    "aliases": [],
-    "description": "種別: 重複",
-    "delete": false
+    "description": "種別: 重複"
   },
   {
     "name": "wontfix",
     "color": "CCCCCC",
-    "aliases": [],
-    "description": "種別: 対応しない",
-    "delete": false
+    "description": "種別: 対応しない"
   },
   {
     "name": "icebox",
     "color": "BDDEEC",
-    "aliases": [],
-    "description": "種別: 優先度低",
-    "delete": false
+    "description": "種別: 優先度低"
   },
   {
     "name": "release",
     "color": "003B46",
-    "aliases": [],
-    "description": "種別: リリース",
-    "delete": false
+    "description": "種別: リリース"
   },
   {
     "name": "major",
     "color": "07575B",
-    "aliases": [],
-    "description": "バージョニング: メジャーアップデート",
-    "delete": false
+    "description": "バージョニング: メジャーアップデート"
   },
   {
     "name": "minor",
     "color": "C4DFE6",
-    "aliases": [],
-    "description": "バージョニング: マイナーアップデート",
-    "delete": false
+    "description": "バージョニング: マイナーアップデート"
   },
   {
     "name": "dependencies",
     "color": "5319E7",
-    "aliases": [],
-    "description": "種別: セキュリティアップデート",
-    "delete": false
+    "description": "種別: セキュリティアップデート"
   },
   {
     "name": "docker",
     "color": "E6D72A",
-    "aliases": [],
-    "description": "依存関係: docker compose build が必要な変更",
-    "delete": false
+    "description": "依存関係: docker compose build が必要な変更"
   },
   {
     "name": "npm",
     "color": "E6D72A",
-    "aliases": [],
-    "description": "依存関係: npm install が必要な変更",
-    "delete": false
+    "description": "依存関係: npm install が必要な変更"
   },
   {
     "name": "composer",
     "color": "E6D72A",
-    "aliases": [],
-    "description": "依存関係: composer install が必要な変更",
-    "delete": false
+    "description": "依存関係: composer install が必要な変更"
   },
   {
     "name": "migrate",
     "color": "E6D72A",
-    "aliases": [],
-    "description": "依存関係: php artisan migrate が必要な変更",
-    "delete": false
+    "description": "依存関係: php artisan migrate が必要な変更"
   },
   {
     "name": "not-reviewed",
     "color": "F9C1CF",
-    "aliases": [],
-    "description": "未レビュー",
-    "delete": false
+    "description": "未レビュー"
   }
 ]
