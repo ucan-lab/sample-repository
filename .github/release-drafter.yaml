@@ -10,12 +10,6 @@ categories:
   - title: '🐛 Bug Fixes'
     labels:
       - 'bug'
-  - title: '🧰 Maintenance'
-    labels:
-      - 'refactor'
-      - 'chore'
-      - 'dependencies'
-      - 'document'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 version-resolver:
@@ -27,6 +21,8 @@ version-resolver:
       - 'minor'
   default: patch
 template: |
-  # Changes
+  ## 🧰 Maintenance
 
   $CHANGES
+
+  **すべての変更点**: $REPOSITORY/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
