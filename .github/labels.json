@@ -83,5 +83,10 @@
     "name": "not-reviewed",
     "color": "F9C1CF",
     "description": "未レビュー"
+  },
+  {
+    "name": "ignore-for-release-note",
+    "color": "CCCCCC",
+    "description": "リリースノートから除外"
   }
 ]

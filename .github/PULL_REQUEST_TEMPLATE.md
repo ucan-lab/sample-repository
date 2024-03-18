@@ -1,5 +1,3 @@
-- [CONTRIBUTING.md](.github/CONTRIBUTING.md) に沿ってPRを作成・レビューしてください。
-
 ## 概要
 
 <!--
