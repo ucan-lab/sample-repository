@@ -1,16 +1,25 @@
 Release <%= Time.now.strftime('%Y-%m-%d %H:%M') %>
+<% features_prs = pull_requests.select { |pr| pr.labels.include?('features') } %>
+<% if features_prs.any? %>
 ## 🚀 Features
-<% pull_requests.select { |pr| pr.labels.include?('features') }.each do |pr| -%>
+<% features_prs.each do |pr| -%>
 <%= pr.to_checklist_item %>
 <% end -%>
+<% end %>
+<% bug_prs = pull_requests.select { |pr| pr.labels.include?('bug') } %>
+<% if bug_prs.any? %>
 ## 🐛 Bug Fixes
-<% pull_requests.select { |pr| pr.labels.include?('bug') }.each do |pr| -%>
+<% bug_prs.each do |pr| -%>
 <%= pr.to_checklist_item %>
 <% end -%>
+<% end %>
+<% maintenance_prs = pull_requests.reject { |pr| pr.labels.include?('features') || pr.labels.include?('bug') } %>
+<% if maintenance_prs.any? %>
 ## 🧰 Maintenance
-<% pull_requests.reject { |pr| pr.labels.include?('features') || pr.labels.include?('bug') }.each do |pr| -%>
+<% maintenance_prs.each do |pr| -%>
 <%= pr.to_checklist_item %>
 <% end -%>
+<% end %>
 ---
 - 本PRには `release` ラベルが自動付与されます。
   - メジャーバージョンアップしたい場合は `major` ラベルを追加してください。
