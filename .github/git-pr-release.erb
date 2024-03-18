@@ -2,3 +2,10 @@ Release <%= Time.now.strftime('%Y-%m-%d %H:%M') %>
 <% pull_requests.each do |pr| -%>
 <%= pr.to_checklist_item %>
 <% end -%>
+---
+- PRの担当者は各PRにチェックしてください。
+  - リリースに含めてはいけないPRが混ざっている場合はrevertしてください。
+- 本PRには `release` ラベルが自動付与されます。
+  - メジャーバージョンアップしたい場合は `major` ラベルを追加してください。
+  - マイナーバージョンアップしたい場合は `minor` ラベルを追加してください。
+  - `major`, `minor` を設定しない場合はパッチバージョンアップになります。

@@ -1,21 +1,17 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
-  - title: '🎉 Release'
-    labels:
-      - 'release'
   - title: '🚀 Features'
     labels:
       - 'feature'
   - title: '🐛 Bug Fixes'
     labels:
       - 'bug'
-  - title: '🧰 Maintenance'
+  - title: '🔧 Other Changes'
     labels:
-      - 'refactor'
-      - 'chore'
-      - 'dependencies'
-      - 'document'
+      - '*'
+exclude-labels:
+  - 'ignore-for-release-note'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 version-resolver:
@@ -27,6 +23,4 @@ version-resolver:
       - 'minor'
   default: patch
 template: |
-  # Changes
-
-  $CHANGES
+  **すべての変更点**: $REPOSITORY/compare/$PREVIOUS_TAG...$RESOLVED_VERSION

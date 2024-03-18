@@ -6,7 +6,7 @@ on:
     types: [opened]
 jobs:
   assign-author:
-    if: ${{ github.actor != 'renovate[bot]' }}
+    if: ${{ ! contains(fromJson('["renovate[bot]", "dependabot[bot]"]'), github.actor) }}
     permissions:
       issues: write
       pull-requests: write

@@ -1,24 +1,27 @@
-name: Bug Report
-description: File a bug report
+name: バグレポート
+description: バグレポート用のテンプレート
 title: "[Bug]: "
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        1つのバグに付き、1Issueで報告してください。
+        タイトルは簡潔で問題がわかる要約として記述してください。
   - type: textarea
     id: description
     attributes:
-      label: 問題の説明
-      description: どのような問題が発生していますか？
+      label: 現象
+      description: どのようなバグが発生したのか、できるだけ詳細に記述してください。
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: 再現手順
-      description: 問題を再現させる手順を詳細に記述してください。
+      label: 再現手順と再現性
+      description: |
+        そのバグを再現するための手順をできるだけ詳しく記述してください。
+        また、再現性がどのくらいあるか記述してください。
       value: |
         1.
         2.
@@ -26,13 +29,8 @@ body:
   - type: textarea
     id: expected
     attributes:
-      label: 期待される挙動
-      description: 本来どのような挙動が期待されるのか説明してください。
-  - type: textarea
-    id: actual
-    attributes:
-      label: 実際の挙動
-      description: 実際に発生した挙動を説明してください。
+      label: 期待される事象
+      description: 本来どのような結果を期待しているのかを記述してください
   - type: textarea
     id: screenshot
     attributes:
@@ -46,16 +44,6 @@ body:
         - label: ローカル環境
         - label: 検証環境
         - label: 本番環境
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: どのブラウザで問題が発生しましたか？
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
   - type: textarea
     id: logs
     attributes:

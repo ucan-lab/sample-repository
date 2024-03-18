@@ -1,14 +1,16 @@
-name: Release Pull Request
+name: Create Release Pull Request
 on:
   push:
     branches: [develop]
 jobs:
-  release-pull-request:
+  git-pr-release:
     permissions:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1
@@ -18,6 +20,6 @@ jobs:
           GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_PR_RELEASE_BRANCH_PRODUCTION: main
           GIT_PR_RELEASE_BRANCH_STAGING: develop
-          GIT_PR_RELEASE_LABELS: release
+          GIT_PR_RELEASE_LABELS: release,ignore-for-release-note
           GIT_PR_RELEASE_TEMPLATE: .github/git-pr-release.erb
           TZ: Asia/Tokyo

@@ -1,7 +1,7 @@
-name: Assign Pull Request
+name: Assign Label
 on:
   pull_request:
-    types: [synchronize, labeled, unlabeled, opened, reopened]
+    types: [opened, labeled, unlabeled, synchronize, reopened]
 jobs:
   assign-label:
     permissions:
@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        if: ${{ github.event.action == 'opened' }}
+        with:
+          fetch-depth: 0
       - uses: actions/labeler@v5
         if: ${{ github.event.action == 'opened' }}
         with:
