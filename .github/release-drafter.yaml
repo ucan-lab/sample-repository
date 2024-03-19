@@ -7,9 +7,7 @@ categories:
   - title: '🐛 Bug Fixes'
     labels:
       - 'bug'
-  - title: '🔧 Other Changes'
-    labels:
-      - '*'
+  - title: '📝 Other Changes'
 exclude-labels:
   - 'ignore-for-release-note'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
@@ -23,4 +21,6 @@ version-resolver:
       - 'minor'
   default: patch
 template: |
-  **すべての変更点**: $REPOSITORY/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
+  $CHANGES
+
+  **すべての変更点**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
