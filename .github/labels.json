@@ -88,5 +88,10 @@
     "name": "ignore-for-release-note",
     "color": "CCCCCC",
     "description": "リリースノートから除外"
+  },
+  {
+    "name": "ignore-for-ai-code-review",
+    "color": "CCCCCC",
+    "description": "AIコードレビューから除外"
   }
 ]
