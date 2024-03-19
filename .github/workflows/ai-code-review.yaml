@@ -1,9 +1,10 @@
-name: Code Review
+name: AI Code Review
 on:
   pull_request:
     types: [opened] # PR作成の初回のみレビューする。
 jobs:
   code-review:
+    if: ${{ ! contains(github.event.*.labels.*.name, 'ignore-for-ai-code-review') }}
     permissions:
       contents: read
       pull-requests: write
