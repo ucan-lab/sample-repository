@@ -1,0 +1,6 @@
+version: '3'
+tasks:
+  install:
+    cmds:
+      - echo 'Install project !'
+    silent: true
