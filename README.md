@@ -14,8 +14,27 @@
 
 ## 開発環境構築
 
+Taskfileを利用しています。
+https://taskfile.dev/ja-JP/installation
+
+Macユーザーの場合はHomebrewからインストールできます。
+
+```
+$ brew install go-task
+$ task --version
+Task version: 3.33.1
+```
+
+プロジェクトの環境構築コマンドは下記のコマンドにまとめています。
+
+```
+$ task install
+```
+
 ### 動作確認
 
 ### コマンド一覧
+
+[Taskfile](Taskfile.yaml)
 
 ## トラブルシューティング
