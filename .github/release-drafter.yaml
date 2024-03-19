@@ -22,5 +22,7 @@ version-resolver:
   default: patch
 template: |
   $CHANGES
+footer: |
+  ## すべての変更点
 
-  **すべての変更点**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+  https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
