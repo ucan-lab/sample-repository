@@ -16,5 +16,6 @@ jobs:
         with:
           config-name: release-drafter.yaml
           commitish: main
+          publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
