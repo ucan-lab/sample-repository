@@ -1,13 +1,13 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
-  - title: '🚀 Features'
+  - title: '🚀 新機能'
     labels:
       - 'feature'
-  - title: '🐛 Bug Fixes'
+  - title: '🐞 バグ修正'
     labels:
       - 'bug'
-  - title: '📝 Other Changes'
+  - title: '📝 その他の変更'
 exclude-labels:
   - 'ignore-for-release-note'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
@@ -23,6 +23,7 @@ version-resolver:
 template: |
   $CHANGES
 footer: |
+
   ## すべての変更点
 
   https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
