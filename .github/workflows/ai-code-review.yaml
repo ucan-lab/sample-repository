@@ -1,18 +1,27 @@
 name: AI Code Review
 on:
   pull_request:
-    types: [opened] # PR作成の初回のみレビューする。
+    types: [opened, reopened, synchronize]
+  issue_comment:
+    types: [created, edited]
 jobs:
-  code-review:
-    if: ${{ ! contains(github.event.*.labels.*.name, 'ignore-for-ai-code-review') }}
+  pr-agent:
+    if: ${{ ! contains(github.event.*.labels.*.name, 'ignore-for-ai-code-review') && github.event.sender.type != 'Bot' }}
     permissions:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: anc95/ChatGPT-CodeReview@main
+      - uses: Codium-ai/pr-agent@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          LANGUAGE: Japanese
-          MODEL: gpt-4-0125-preview # https://platform.openai.com/docs/models/overview
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          PR_DESCRIPTION.EXTRA_INSTRUCTIONS: 'Please use Japanese.'
+          PR_REVIEWER.EXTRA_INSTRUCTIONS: 'Please use Japanese.'
+          PR_CODE_SUGGESTIONS.EXTRA_INSTRUCTIONS: 'Please use Japanese.'
+          github_action.auto_describe: "false"
+          github_action.auto_review: "true"
+          github_action.auto_improve: "true"
+          pr_description.publish_labels: "false"
+          pr_reviewer.enable_review_labels_security: "false"
+          pr_reviewer.enable_review_labels_effort: "false"
