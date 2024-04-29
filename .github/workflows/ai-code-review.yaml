@@ -19,7 +19,7 @@ jobs:
           PR_DESCRIPTION.EXTRA_INSTRUCTIONS: 'Please use Japanese.'
           PR_REVIEWER.EXTRA_INSTRUCTIONS: 'Please use Japanese.'
           PR_CODE_SUGGESTIONS.EXTRA_INSTRUCTIONS: 'Please use Japanese.'
-          github_action.auto_describe: "false"
+          github_action.auto_describe: "true"
           github_action.auto_review: "true"
           github_action.auto_improve: "true"
           pr_description.publish_labels: "false"
