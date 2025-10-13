@@ -12,11 +12,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/labeler@v5
+      - uses: actions/labeler@v6
         if: ${{ github.event.action == 'opened' }}
         with:
           configuration-path: .github/labeler-branch.yaml
-      - uses: actions/labeler@v5
+      - uses: actions/labeler@v6
         if: ${{ contains(fromJson('["opened", "synchronize"]'), github.event.action) }}
         with:
           configuration-path: .github/labeler-files.yaml
